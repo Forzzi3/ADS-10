@@ -26,7 +26,7 @@ class Tree {
             allperms.push_back(v);
         }
     }
-    void create(Node* root, std::vector<char>& in) {
+    void create(Node* root, const std::vector<char>& in) {
         for (char ch : in) {
             Node* temp = new Node;
             temp->ch = ch;
@@ -38,7 +38,7 @@ class Tree {
     }
 
  public:
-    Tree(std::vector<char> in) {
+    explicit Tree(std::vector<char> in) {
         root = new Node;
         root->ch = ' ';
         root->tr = 1;
