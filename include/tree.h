@@ -9,13 +9,12 @@ class Tree {
  private:
     struct Node {
         char ch;
-        int tr = 0;
         std::vector<Node*> vec;
     };
     Node* root;
     std::vector<std::vector<char>> allperms;
     void createallperms(Node* root, std::vector<char> v) {
-        if (!root->tr) {
+        if (!(root->ch == ' ')) {
             v.push_back(root->ch);
         }
         if (!root->vec.empty()) {
@@ -41,7 +40,6 @@ class Tree {
     explicit Tree(std::vector<char> in) {
         root = new Node;
         root->ch = ' ';
-        root->tr = 1;
         create(root, in);
         std::vector<char> v;
         createallperms(root, v);
